@@ -13,287 +13,274 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet" />
-    <!-- reset CSS -->
-    <link rel="stylesheet" href="./css/reset.css" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css" />
-    <!-- CDN에서 Swiper 사용 -->
+    <!-- Swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/new.css" />
     <!-- JS -->
     <script defer src="./js/main.js"></script>
   </head>
 
   <body>
-    <div class="wrapper">
-      <!-- HEADER 시작 -->
-      <header>
-        <div class="inner">
-          <h1>
-            <a href="#main"><img src="./img/logo.png" alt="logo" /></a>
-          </h1>
-          <nav>
-            <ul class="sideSlide">
-              <li><a href="#profile">Profile</a></li>
-              <li><a href="#tech_stack">Tech Stack</a></li>
-              <li><a href="#project">Project</a></li>
-              <li><a href="#career">Career</a></li>
+    <header>
+      <div class="inner">
+        <h1>
+          <a href="#main"><img src="./img/logo.png" alt="logo" /></a>
+        </h1>
+        <nav>
+          <ul class="sideSlide">
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#tech_stack">Tech Stack</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#career">Career</a></li>
+          </ul>
+        </nav>
+        <div class="language">Language ▼</div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 슬라이드 메인 컨테이너 -->
+      <div class="swiper">
+        <!-- 추가 필수 wrapper -->
+        <div class="swiper-wrapper">
+          <!-- 슬라이드 -->
+
+          <!-- section1 메인화면 시작 -->
+          <section id="main" class="main_view swiper-slide">
+            <div class="quick_menu_banner">
+              <ul class="banner_number">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+
+            <article class="Page_01">
+              <div class="main_title">
+                <h2>새로운 기술을 배우거나<br />적용하는 것에 거부감이 없는 개발자</h2>
+                <p>신뢰의 도약!</p>
+                <button>wiew more</button>
+              </div>
+            </article>
+            <article class="Page_02">
+              <div class="main_title hidden">
+                <h2>긍정적인 마인드 보유<br />할 수 있다! 할 수 있다! 할 수 있다!</h2>
+                <p>오히려 좋아!</p>
+                <button>wiew more</button>
+              </div>
+            </article>
+            <article class="Page_03">
+              <div class="main_title hidden">
+                <h2>오늘보다 내일,<br />내일 보다 모레 더 잘 할 개발자</h2>
+                <p>클린코드 지향!</p>
+                <button>wiew more</button>
+              </div>
+            </article>
+            <article class="Page_04 hidden">
+              <div class="main_title">
+                <h2>주도적인 업무 수행과 협업,<br />적극적인 소통이 가능한 개발자</h2>
+                <p>힘든 길은 함께!</p>
+                <button>wiew more</button>
+              </div>
+            </article>
+          </section>
+          <!-- section1 메인화면 종료 -->
+
+          <!-- section2 프로필 시작 -->
+          <section id="profile" class="profile swiper-slide">
+            <h3>Profile</h3>
+            <ul>
+              <li>
+                <div class="icon"><i class="fa-solid fa-user"></i></div>
+                <div>
+                  <h5>이름</h5>
+                  <p>곽도억</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa-solid fa-cake-candles"></i></div>
+                <div>
+                  <h5>생년월일</h5>
+                  <p>91.09.24</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <h5>주소지</h5>
+                  <p>대구시 서구</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <h5>연락처</h5>
+                  <p>010.5116.5535</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <h5>이메일</h5>
+                  <p>ddc.akari@gmail.com</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div>
+                  <h5>학력</h5>
+                  <p>
+                    대구가톨릭대학교 <br />
+                    <span>도서관학 / 일어일문학</span>
+                  </p>
+                </div>
+              </li>
             </ul>
-          </nav>
-          <div class="language">Language ▼</div>
+          </section>
+          <!-- section2 프로필 종료 -->
+
+          <!-- section3 기술스택 시작 -->
+          <section id="tech_stack" class="tech_stack swiper-slide"></section>
+          <!-- section3 기술스택 종료 -->
+
+          <!-- section4 프로젝트 시작 -->
+          <section id="project" class="project swiper-slide">
+            <div class="contents">
+              <ul id="list">
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="project_list">
+                    <img src="" alt="" />
+                    <p>스타벅스 클론코딩</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="search_window">
+              <div class="search">
+                <input type="text" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="filter_window">
+                <p>선택</p>
+                <input type="checkbox" />전체 선택 <input type="checkbox" />선택 해제
+              </div>
+              <div class="filter_window">
+                <p>작업방식</p>
+                <input type="checkbox" />개인 <input type="checkbox" />팀별 <input type="checkbox" />클론 코딩
+              </div>
+              <div class="filter_window">
+                <p>사용 기술</p>
+                <input type="checkbox" />자바스크립트 <input type="checkbox" />리액트 <input type="checkbox" />뷰<br />
+                <input type="checkbox" />부트스트랩 <input type="checkbox" />제이쿼리 <input type="checkbox" />바닐라
+              </div>
+              <div class="filter_window">
+                <p>사이즈</p>
+                <input type="checkbox" />PC <input type="checkbox" />태블릿 <input type="checkbox" />모바일 <input type="checkbox" />반응형
+              </div>
+            </div>
+          </section>
+          <!-- section4 프로젝트 종료 -->
+
+          <!-- section5 커리어 시작 -->
+          <section id="career" class="career swiper-slide">
+            <h3>걸어온 발자취..</h3>
+            <ul>
+              <li>
+                <h5>교육</h5>
+                <p>2010.03~2018.02 <br />00대학교 졸업</p>
+              </li>
+              <li>
+                <h5>경력</h5>
+                <p>2010.03~2018.02 <br />00대학교 졸업</p>
+              </li>
+              <li>
+                <h5>경험</h5>
+                <p>2010.03~2018.02 <br />00대학교 졸업</p>
+              </li>
+              <li>
+                <h5>자격증</h5>
+                <p>2010.03~2018.02 <br />00대학교 졸업</p>
+              </li>
+            </ul>
+          </section>
+          <!-- section5 커리어 종료 -->
         </div>
-      </header>
-      <!-- HEADER 종료 -->
-
-      <!-- MAIN 시작 -->
-      <main>
-        <!-- 사이드 퀵 메뉴 -->
-        <div class="quick_menu">
-          <ul class="slide_number">
-            <li class="onClick"><a href="#main"></a></li>
-            <li><a href="#profile"></a></li>
-            <li><a href="#tech_stack"></a></li>
-            <li><a href="#project"></a></li>
-            <li><a href="#career"></a></li>
-          </ul>
-          <button>
-            <p>SCROLL <br />DOWN</p>
-            <img src="./img/scroll down/scroll down wh2.png" alt="스크롤 다운" />
-          </button>
+        <!-- 페이지 번호 사용 여부 -->
+        <div class="swiper-pagination">
+          <div class="abc"></div>
         </div>
-
-        <!-- section1 메인화면 시작 -->
-        <section id="main" class="main_view">
-          <div class="quick_menu_banner">
-            <ul class="banner_number">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
-
-          <article class="Page_01">
-            <div class="main_title">
-              <h2>새로운 기술을 배우거나<br />적용하는 것에 거부감이 없는 개발자</h2>
-              <p>신뢰의 도약!</p>
-              <button>wiew more</button>
-            </div>
-          </article>
-          <article class="Page_02">
-            <div class="main_title">
-              <h2>긍정적인 마인드 보유<br />할 수 있다! 할 수 있다! 할 수 있다!</h2>
-              <p>오히려 좋아!</p>
-              <button>wiew more</button>
-            </div>
-          </article>
-          <article class="Page_03">
-            <div class="main_title">
-              <h2>오늘보다 내일,<br />내일 보다 모레 더 잘 할 개발자</h2>
-              <p>클린코드 지향!</p>
-              <button>wiew more</button>
-            </div>
-          </article>
-          <article class="Page_04">
-            <div class="main_title">
-              <h2>주도적인 업무 수행과 협업,<br />적극적인 소통이 가능한 개발자</h2>
-              <p>힘든 길은 함께!</p>
-              <button>wiew more</button>
-            </div>
-          </article>
-        </section>
-        <!-- section1 메인화면 종료 -->
-
-        <!-- section2 프로필 시작 -->
-        <section id="profile" class="profile">
-          <h3>Profile</h3>
-          <ul>
-            <li>
-              <div class="icon"><i class="fa-solid fa-user"></i></div>
-              <div>
-                <h5>이름</h5>
-                <p>곽도억</p>
-              </div>
-            </li>
-            <li>
-              <div class="icon"><i class="fa-solid fa-cake-candles"></i></div>
-              <div>
-                <h5>생년월일</h5>
-                <p>91.09.24</p>
-              </div>
-            </li>
-            <li>
-              <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <h5>주소지</h5>
-                <p>대구시 서구</p>
-              </div>
-            </li>
-            <li>
-              <div class="icon"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <h5>연락처</h5>
-                <p>010.5116.5535</p>
-              </div>
-            </li>
-            <li>
-              <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-              <div>
-                <h5>이메일</h5>
-                <p>ddc.akari@gmail.com</p>
-              </div>
-            </li>
-            <li>
-              <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
-              <div>
-                <h5>학력</h5>
-                <p>
-                  대구가톨릭대학교 <br />
-                  <span>도서관학 / 일어일문학</span>
-                </p>
-              </div>
-            </li>
-          </ul>
-        </section>
-        <!-- section2 프로필 종료 -->
-
-        <!-- section3 기술스택 시작 -->
-        <section id="tech_stack" class="tech_stack"></section>
-        <!-- section3 기술스택 종료 -->
-
-        <!-- section4 프로젝트 시작 -->
-        <section id="project" class="project">
-          <div class="contents">
-            <ul id="list">
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="search_window">
-            <div class="search">
-              <input type="text" />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <div class="filter_window">
-              <p>선택</p>
-              <input type="checkbox" />전체 선택 <input type="checkbox" />선택 해제
-            </div>
-            <div class="filter_window">
-              <p>작업방식</p>
-              <input type="checkbox" />개인 <input type="checkbox" />팀별 <input type="checkbox" />클론 코딩
-            </div>
-            <div class="filter_window">
-              <p>사용 기술</p>
-              <input type="checkbox" />자바스크립트 <input type="checkbox" />리액트 <input type="checkbox" />뷰<br />
-              <input type="checkbox" />부트스트랩 <input type="checkbox" />제이쿼리 <input type="checkbox" />바닐라
-            </div>
-            <div class="filter_window">
-              <p>사이즈</p>
-              <input type="checkbox" />PC <input type="checkbox" />태블릿 <input type="checkbox" />모바일 <input type="checkbox" />반응형
-            </div>
-          </div>
-        </section>
-        <!-- section4 프로젝트 종료 -->
-
-        <!-- section5 커리어 시작 -->
-        <section id="career" class="career">
-          <h3>걸어온 발자취..</h3>
-          <ul>
-            <li>
-              <h5>교육</h5>
-              <p>2010.03~2018.02 <br />00대학교 졸업</p>
-            </li>
-            <li>
-              <h5>경력</h5>
-              <p>2010.03~2018.02 <br />00대학교 졸업</p>
-            </li>
-            <li>
-              <h5>경험</h5>
-              <p>2010.03~2018.02 <br />00대학교 졸업</p>
-            </li>
-            <li>
-              <h5>자격증</h5>
-              <p>2010.03~2018.02 <br />00대학교 졸업</p>
-            </li>
-          </ul>
-        </section>
-        <!-- section5 커리어 종료 -->
-      </main>
-      <!-- MAIN 종료 -->
-
-      <!-- FOOTER 시작 -->
-      <footer></footer>
-      <!-- FOOTER 종료 -->
-    </div>
+      </div>
+    </main>
+    <footer></footer>
   </body>
 </html>

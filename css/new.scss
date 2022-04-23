@@ -1,0 +1,558 @@
+body {
+  background-color: #333;
+  color: #fff;
+  scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  width: 90%;
+}
+
+// 헤더 영역
+header {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 80px;
+  @include center();
+  background-color: rgba(0, 0, 0, 0.05);
+  // background-color: rgba(255, 255, 255, 0.1);
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 80px;
+    filter: blur(100px);
+    // background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: -1;
+  }
+
+  .inner {
+    @include center();
+    justify-content: space-between;
+
+    h1 {
+      @include center();
+      a {
+        img {
+          height: 72px;
+        }
+      }
+    }
+
+    nav {
+      ul {
+        display: flex;
+        li {
+          @include center();
+          // padding: 10px;
+          // width: 100px;
+          // border: 1px solid #fff;
+          margin-right: 4em;
+          letter-spacing: 2px;
+          font-size: 22px;
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+            box-sizing: border-box;
+            padding: 10px;
+            &:hover {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .language {
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+}
+
+// 사이드 퀵 메뉴
+main {
+  @include center();
+  flex-direction: column;
+  .quick_menu {
+    position: fixed;
+    width: 90%;
+    // background-color: #156;
+    top: 50%;
+    @include center();
+    z-index: 90;
+
+    // 사이드 퀵 메뉴 슬라이드
+    ul.slide_number {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0%, -50%);
+      flex-direction: column;
+
+      > li {
+        position: relative;
+        margin-bottom: 60px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+        // 호버 시 글자 출력
+        &:hover::before {
+          position: absolute;
+          top: 50%;
+          left: -90px;
+          transform: translate(-50%, -50%);
+          content: "";
+          width: 120px;
+          height: 35px;
+          background-color: #fff;
+          border-radius: 20px;
+          color: #111;
+          @include center();
+        }
+        &:nth-child(1):hover::before {
+          content: "Main";
+        }
+        &:nth-child(2):hover::before {
+          content: "Profile";
+        }
+        &:nth-child(3):hover::before {
+          content: "Tech Stack";
+        }
+        &:nth-child(4):hover::before {
+          content: "Project";
+        }
+        &:nth-child(5):hover::before {
+          content: "Career";
+        }
+        > a {
+          position: relative;
+          display: block;
+          width: 6px;
+          height: 6px;
+          background-color: #fff;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    // 스크롤 다운 버튼
+    button {
+      @include center();
+      position: fixed;
+      right: 5%;
+      bottom: 6%;
+      background-color: transparent;
+      border: 0;
+      color: #fff;
+      animation-name: moving; // 애니메이션 명
+      animation-duration: 1s; // 완료까지 걸리는 시간 설정
+      animation-timing-function: linear; // 속도 곡선 설정
+      // animation-delay: 2s; // 지연 설정
+      animation-iteration-count: infinite; // 반복 설정
+      animation-direction: alternate; // 재생 방향 설정
+      p {
+        font-size: 10px;
+        position: absolute;
+        top: -20px;
+      }
+      img {
+        width: 50px;
+      }
+    }
+    @keyframes moving {
+      0% {
+        bottom: 6%;
+      }
+
+      50% {
+        bottom: 7%;
+      }
+
+      100% {
+        bottom: 6%;
+      }
+    }
+  }
+}
+
+// 메인 영역
+main {
+  // 공통 고정 값
+  section {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    @include center();
+    // border: 1px solid #fff;
+  }
+
+  // section1 메인화면 시작
+  section.main_view {
+    position: relative;
+
+    .quick_menu_banner {
+      position: absolute;
+      width: 90%;
+      bottom: 40px;
+      z-index: 30;
+
+      // 배너 슬라이드
+      ul.banner_number {
+        display: flex;
+
+        > li {
+          width: 58px;
+          height: 7px;
+          margin-right: 9px;
+          background-color: #fff;
+          opacity: 0.3;
+          transform: skew(-35deg);
+          cursor: pointer;
+          &:first-child {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    // 공통 고정 값
+    article {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      box-sizing: border-box;
+      @include center();
+
+      .main_title {
+        width: 90%;
+        h2 {
+          font-size: 36px;
+          font-weight: 600;
+          line-height: 50px;
+        }
+
+        p {
+          margin: 30px 0;
+        }
+
+        > button {
+          width: 150px;
+          height: 40px;
+          font-size: 18px;
+          font-weight: 700;
+          background-color: transparent;
+          color: #fff;
+          border: 1px solid #fff;
+          margin: 20px 0;
+          text-transform: uppercase;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: orange;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        visibility: visible;
+        background-image: url(../img/1.main/01.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      &:nth-child(3) {
+        visibility: hidden;
+        background-image: url(../img/1.main/02.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      &:nth-child(4) {
+        visibility: hidden;
+        background-image: url(../img/1.main/03.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      &:nth-child(5) {
+        visibility: hidden;
+        background-image: url(../img/1.main/04.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+
+  // section1 메인화면 종료
+
+  // section2 프로필 시작
+  section.profile {
+    flex-direction: column;
+    background-image: url(../img/2.profile/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    h3 {
+      letter-spacing: 10px;
+      font-size: 5rem;
+      font-weight: 600;
+      margin: 6rem;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    ul {
+      @include center();
+      flex-wrap: wrap;
+      width: 80%;
+      li {
+        padding: 0 10px;
+        @include center();
+        font-size: 18px;
+        width: calc(80% / 3);
+        height: 140px;
+        margin: 10px;
+        background-color: rgba(64, 178, 206, 0.3);
+        box-shadow: 2px 2px 100px rgba(0, 0, 0, 0.6);
+        .icon {
+          @include center();
+          width: 120px;
+          height: 100%;
+          i {
+            @include center();
+            font-size: 40px;
+          }
+        }
+        > div {
+          box-sizing: border-box;
+          @include center();
+          align-items: baseline;
+          flex-direction: column;
+          padding: 0 10px;
+          width: 100%;
+          height: 100%;
+          h5 {
+            letter-spacing: 5px;
+            font-size: 20px;
+            line-height: 1.4;
+            text-shadow: 0px 0px 4px #000;
+          }
+          p {
+            letter-spacing: 1px;
+            font-size: 25px;
+            line-height: 1.2;
+            text-shadow: 0px 0px 4px #000;
+            > span {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // section2 프로필 종료
+
+  // section3 기술스택 시작
+  section.tech_stack {
+  }
+  // section3 기술스택 종료
+
+  // section4 프로젝트 시작
+  section.project {
+    .contents {
+      width: 70%;
+      height: 100vh;
+      background-color: rgba(255, 0, 0, 0.3);
+      ul {
+        @include center();
+        // margin-top: 100px;
+        // padding: 30px;
+        height: 100%;
+        background-color: rgba(255, 0, 230, 0.1);
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          @include center();
+          width: 25%;
+          height: 200px;
+          margin: 10px;
+          background-color: rgba(222, 225, 30, 0.4);
+          > div {
+            img {
+              width: 300px;
+              height: 120px;
+            }
+            p {
+              @include center();
+              line-height: 4;
+            }
+          }
+        }
+      }
+    }
+    .search_window {
+      @include center();
+      flex-direction: column;
+      width: 30%;
+      height: 100vh;
+      background-color: rgba(0, 0, 255, 0.3);
+      // padding: 150px 10px;
+      box-sizing: border-box;
+      .search {
+        input {
+        }
+      }
+      .filter_window {
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 300px;
+        height: 60px;
+        border-radius: 5px;
+        margin: 10px 0;
+        p {
+        }
+        input {
+        }
+      }
+    }
+  }
+  // section4 프로젝트 종료
+
+  // section5 커리어 시작
+  section.career {
+    flex-direction: column;
+    background-image: url(../img/5.career/careerBG.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    h3 {
+      // display: block;
+      font-size: 6rem;
+      margin-bottom: 6rem;
+      text-align: left;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    ul {
+      display: flex;
+
+      li {
+        width: 350px;
+        height: 350px;
+        background-color: rgba(0, 0, 0, 0.6);
+        margin: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+        h5 {
+          position: relative;
+          font-size: 3rem;
+          margin-bottom: 30px;
+          &::after {
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            content: "";
+            width: 100%;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.8);
+          }
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  // section5 커리어 종료
+}
+
+// 푸터 영역
+footer {
+}
+
+// 사이드 퀵 메뉴 클릭 시 디자인
+.onClick {
+  position: relative;
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #156;
+  border-radius: 50%;
+  cursor: pointer;
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border: 1px solid #fff;
+  }
+}
+
+//////////////////////////////////////////////////////////
+
+.swiper {
+  width: 100%;
+  height: 100vh;
+  background-color: orange;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section:nth-child(1) {
+  background-color: rgba(95, 167, 93, 0.444);
+}
+
+section:nth-child(2) {
+  background-color: rgba(95, 167, 93, 0.244);
+}
+section:nth-child(3) {
+  background-color: rgba(95, 167, 93, 0.044);
+}
+
+.aaa {
+  background-color: red;
+}
+
+.bbb {
+  background-color: rgb(21, 0, 255);
+}
+
+.bullets {
+  width: 900px;
+  height: 20px;
+  background-color: #156;
+}
+
+.hidden {
+  display: none;
+}
